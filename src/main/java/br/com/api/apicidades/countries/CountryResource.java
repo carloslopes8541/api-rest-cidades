@@ -21,15 +21,15 @@ public class CountryResource {
     private Countryrepository repository;
 
     @GetMapping
-    public Page<Country> countries(Pageable  page){
+    public Page<Country> countries(Pageable page) {
         return repository.findAll(page);
 
     }
 
     @GetMapping("/{id]")
-    public ResponseEntity getOne(@PathVariable  Long id){
+    public ResponseEntity getOne(@PathVariable Long id) {
         Optional<Country> optional = repository.findById(id);
-        if (optional.isPresent()){
+        if (optional.isPresent()) {
             return ResponseEntity.ok().body(optional.get());
         } else {
             return ResponseEntity.notFound().build();

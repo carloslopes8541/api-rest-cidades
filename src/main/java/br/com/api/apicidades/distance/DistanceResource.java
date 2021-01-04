@@ -22,16 +22,16 @@ public class DistanceResource {
 
     @GetMapping("/by-points")
     public ResponseEntity byPoints(@RequestParam(name = "from") final Long city1,
-                                           @RequestParam(name = "to") final Long city2) {
+                                   @RequestParam(name = "to") final Long city2) {
         log.info("byPoints");
-        return ResponseEntity.ok().body(service.distanceByPointsInMiles(city1, city2)) ;
+        return ResponseEntity.ok().body(service.distanceByPointsInMiles(city1, city2));
     }
 
     @GetMapping("/by-cube")
     public ResponseEntity byCube(@RequestParam(name = "from") final Long city1,
-                         @RequestParam(name = "to") final Long city2) {
+                                 @RequestParam(name = "to") final Long city2) {
         log.info("byCube");
         return ResponseEntity.ok().body(service.distanceByCubeInMeters(city1, city2));
     }
 
-    }
+}

@@ -26,6 +26,7 @@ public class DistanceService {
         log.info("nativePostgresInMiles({}, {})", city1, city2);
         return cityRepository.distanceByPoints(city1, city2);
     }
+
     public Double distanceByCubeInMeters(Long city1, Long city2) {
         log.info("distanceByCubeInMeters({}, {})", city1, city2);
         final List<City> cities = cityRepository.findAllById((Arrays.asList(city1, city2)));
@@ -35,4 +36,4 @@ public class DistanceService {
 
         return cityRepository.distanceByCube(p1.getX(), p1.getY(), p2.getX(), p2.getY());
     }
-    }
+}

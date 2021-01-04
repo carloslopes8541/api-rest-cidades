@@ -9,19 +9,19 @@ import org.hibernate.annotations.TypeDefs;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity( name = "State" )
-@Table( name = "estado" )
-@TypeDefs({@TypeDef( name  =  " jsonb " , typeClass  =  JsonBinaryType.class)})
-public  class State {
+@Entity(name = "State")
+@Table(name = "estado")
+@TypeDefs({@TypeDef(name = " jsonb ", typeClass = JsonBinaryType.class)})
+public class State {
 
 
     @Id
     private long id;
 
-    @Column( name  =  " nome " )
+    @Column(name = " nome ")
     private String name;
 
-    private  String uf;
+    private String uf;
 
     private Integer ibge;
 
@@ -29,15 +29,15 @@ public  class State {
     //@Column (name = "pais")
     //private Integer countryId;
 
-  //  2º - @ManyToOne
+    //  2º - @ManyToOne
     @ManyToOne
-    @JoinColumn ( name  =  "pais" , referencedColumnName  =  "id" )
+    @JoinColumn(name = "pais", referencedColumnName = "id")
     private Country country;
 
-    @Type( type  =  " jsonb " )
-    @Basic ( fetch  =  FetchType . LAZY )
-    @Column ( name  =  " ddd " , columnDefinition  =  " jsonb " )
-    private  List< Integer> ddd;
+    @Type(type = " jsonb ")
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = " ddd ", columnDefinition = " jsonb ")
+    private List<Integer> ddd;
 
     public State() {
     }
@@ -62,13 +62,13 @@ public  class State {
         return ddd;
     }
 
-   public Country getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-  //  public  Integer getCountryID(){
-   //     return countryId;
-  //  }
+    //  public  Integer getCountryID(){
+    //     return countryId;
+    //  }
 
 
 }

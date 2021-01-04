@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-    @RestController
-    @RequestMapping("/staties")
-    public class StateResource {
+@RestController
+@RequestMapping("/staties")
+public class StateResource {
 
-        @Autowired
-        private final StateRepository repository;
+    @Autowired
+    private final StateRepository repository;
 
-        public StateResource(final StateRepository repository) {
-            this.repository = repository;
-        }
-
-        @GetMapping
-        public List<State> staties() {
-            return repository.findAll();
-        }
+    public StateResource(final StateRepository repository) {
+        this.repository = repository;
     }
+
+    @GetMapping
+    public List<State> staties() {
+        return repository.findAll();
+    }
+}
 
 

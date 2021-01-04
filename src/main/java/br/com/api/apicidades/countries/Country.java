@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table ( name  =  " pais " )
+@Table(name = " pais ")
 public class Country {
     @Id
     private Long id;
@@ -15,10 +15,10 @@ public class Country {
     private String name;
 
     @Column(name = "nome_pt")
-    private  String  portugueseName;
+    private String portugueseName;
 
     @Column(name = "sigla")
-    private  String code;
+    private String code;
 
     private Integer bacen;
 

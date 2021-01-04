@@ -36,7 +36,7 @@ public class City {
     @Column(name = "lat_lon", updatable = false, insertable = false)
     private Point location;
 
-    public  City(){
+    public City() {
 
     }
 
@@ -71,7 +71,7 @@ public class City {
         return geolocation;
     }
 
-      public Point getLocation() {
-         return location;
-     }
+    public Point getLocation() {
+        return location;
+    }
 }
